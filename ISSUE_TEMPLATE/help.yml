@@ -1,0 +1,43 @@
+name: I'm stuck
+description: Use after 30 minutes stuck. A good help request gets a fast answer.
+title: "Stuck: <one line about the problem>"
+labels: ["type:help"]
+body:
+  - type: input
+    id: ticket
+    attributes:
+      label: Which ticket?
+      placeholder: "#12"
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What I'm trying to do
+      placeholder: "Make nginx reachable from my laptop."
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: The command I ran
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: The full error, copied as text
+      description: Paste the whole output, not a summary. Remove any passwords, keys or tokens first.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What I already tried
+      placeholder: |
+        - Checked `systemctl status nginx`: it says active (running)
+        - Restarted the VM
+    validations:
+      required: true

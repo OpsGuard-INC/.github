@@ -1,0 +1,57 @@
+name: Ticket
+description: A piece of work for the board. Used by the instructor and tech leads.
+title: "<verb> <what>"
+labels: ["type:task"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why this work exists, written as the person asking for it would say it.
+      placeholder: "Users see errors for about 20 seconds after every deploy."
+    validations:
+      required: true
+  - type: textarea
+    id: todo
+    attributes:
+      label: What to do
+      description: Level 1 = numbered steps with commands. Level 2 = goal plus hints and links. Level 3 = the problem only.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Checks a classmate can verify in under five minutes.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Proof of work
+      description: What to post on the ticket or PR to close it.
+    validations:
+      required: true
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - "1: every step given"
+        - "2: goal and hints"
+        - "3: problem only"
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Size
+      options:
+        - "S: under 2 hours"
+        - "M: 2 to 5 hours"
+        - "L: more than 5 hours"
+    validations:
+      required: true
